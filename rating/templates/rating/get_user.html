@@ -1,0 +1,19 @@
+{% extends 'rating/base.html' %}
+
+{% block content %}
+    <h2> {{ username }} </h2>
+    <table>
+        {% for rating in ratings %}
+            <tr>
+                <td> {{ rating.site }}</td>
+                <td> {{ rating.info.rating }}</td>
+                <td> {% if rating.info.max_rating %}
+                        {{ rating.info.max_rating }}
+                     {% else %}
+                        --
+                     {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>    
+{% endblock %}
